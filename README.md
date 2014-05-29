@@ -113,6 +113,39 @@
 * by default the scaffold command will generate a scaffold.css.scss stylesheet which we dont really need, so next time make sure to pass in '--skip-stylesheets' with the generate scaffold command.
 * try adding new items now and mess with creating, reading, editing, deleting them. CRUD, yea
 * in the tutorial he scraps all the json stuff, which you don’t really have to do. It means you can also request this 'url/links.json' and it will return the json for the data. Whoop instant api.
+* make sure you run 'rake db:migrate' to update the database. The push it all to github then push it to heroku and run 'heroku run rake db:migrate' also to update the heroku database
+* if heroku gets out of date from local you can force push using 'git push -f heroku master'
 
- 
+19. Assocations
+* Rails guides on (Assocations)[http://guides.rubyonrails.org/association_basics.html]
+* run 'rails console' to inspect the data on the database, user 'Ctrl + D' to close the console down
+* in console you can run 'User' to see all users and related info. Try 'user = User.first' and the 'user' to just see the first users info.
+* to link the users and the links together you need to do a few things,
+A. Edit the model files for user and link. For link do this
+	belongs_to :user
+B. then this for the user
+	has_many :links
+C. then through the rails console run 'rails generate migration add_user_id_to_pins user_id:integer:index' which will make a migration file with adds a user_id column to
+D. now in the console you can set the user_id of a Link like so (dont forget to save)
+	link = Link.first
+	link #Check out the pin!
+	link.user_id = 1
+	link.save
+* in order to add the userid with each new created link change 'Link.new' in links_controller.rb to
+	current_user.pins.build
+
+20. Authentication
+* use if statements to check if items belong to the current user so only the signed in user can edit
+	<% if link.user == current_user %>	
+* add this code as another method within the links controller
+	def correct_user
+      @pin = current_user.pins.find_by(id: params[:id])
+      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
+    end
+* then add the before_action in the same file
+	before_action :correct_user, only: [:edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
+* below are two ways to do the same thing, show nothing if an item doesnt have a value rather than break the page and get an error
+	<%= link.user.try(:email) %>
+	<%= link.user.email if link.user %>
 
