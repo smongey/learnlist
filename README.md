@@ -49,4 +49,21 @@
 	<%= link_to "link text", "link location", class: "class-name-here" %>
 
 
-14. 
+14. Make development, text and production versions in Gemfile
+* made two group blocks like so
+	group :development, :test do
+		gem 'sqlite3'
+	end
+* this makes a development and testing version for local use
+* then make a production block too
+	group :production do
+		gem 'pg'
+		gem 'rails_12factor'
+	end
+* this is the production version that’ll be used up on heroku
+
+15. Heroku setup
+* run 'heroku login' in the root of the project
+* then run 'heroku create', this will give you the url of the new heroku project
+* then run 'heroku keys:add' which will hook up your settings
+*	 
