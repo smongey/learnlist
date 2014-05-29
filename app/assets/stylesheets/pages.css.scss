@@ -3,5 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 {
-	// background: tint(red, 40%);
+	background: tint(red, 40%);
+	@include button;
 }

@@ -99,7 +99,20 @@
     	</p>
     <% end %> 
 * you can see above the links are going to the url paths for different devise functionality
+* push this all up to git and then heroku
+* then the 'rake db:migrate' needs to be run on heroku, 'heroku run rake db:migrate'
+* then feel free to style and update the devise views to get it all lookin nice
+* delete the functionality we wont be using
+* add account settings to the logged in navbar
+	<li><%= link_to "Account Settings", edit_user_registration_path %></li>
 
+18. Scaffolding
+* run 'rails generate scaffold links description:string' will create a 'links' table in the db with one field 'desctiption' which is a string. 
+* you can pass multiple fields in here which will be associated with 'links'
+* 'links' could be anything really, posts, pins, whatever.
+* by default the scaffold command will generate a scaffold.css.scss stylesheet which we dont really need, so next time make sure to pass in '--skip-stylesheets' with the generate scaffold command.
+* try adding new items now and mess with creating, reading, editing, deleting them. CRUD, yea
+* in the tutorial he scraps all the json stuff, which you don’t really have to do. It means you can also request this 'url/links.json' and it will return the json for the data. Whoop instant api.
 
-
+ 
 

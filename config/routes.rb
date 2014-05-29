@@ -1,4 +1,6 @@
 Learnlist::Application.routes.draw do
+  resources :links
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
