@@ -149,3 +149,24 @@ D. now in the console you can set the user_id of a Link like so (dont forget to 
 	<%= link.user.try(:email) %>
 	<%= link.user.email if link.user %>
 
+21. Imagery
+* install [imagemagick](http://cactuslab.com/imagemagick/) on your machine
+* install the [paperclip gem](https://github.com/thoughtbot/paperclip) in the project
+* 'bundle install' and see the paperclip documentation for adding the following to the link model
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+* then run 'rake db:migrate' to add this to the database
+* then add the field to the link form
+	<%= f.file_field :image, class: "field-class" %>
+* then add multipart to the form_for do block like so
+	form_for @pin, html: { multipart: true } do |f|
+* then add ':image' to the link params in the links controller
+* show the image on the page after upload like so
+	<%= image_tag @link.image.url %>
+* also add the image on the links index page and pass in different sizes like so
+	<%= image_tag pin.image.url(:medium) %>
+* then use the console to navigate and delete links if necessary
+	rails console
+	Link.first
+	link = Link.first
+	link.destroy
+	Link.first.destroy
