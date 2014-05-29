@@ -1,4 +1,6 @@
 <h1>learnlist</h1>
-<%= link_to "Log in", "#", class: "login" %>
-
-<%= link_to "Sign Up", "#", class: "signup" %>
+<% if user_signed_in? %>
+	<p>Nailed It</p>
+<% else %>
+	<%= link_to "Sign up", new_user_registration_path, class: "signup" %>
+<% end %>
