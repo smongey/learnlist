@@ -27,5 +27,26 @@
 
 	get "about" => "pages#about"
 
+10. add embedded ruby in the about view to create a link like so
+
+	<%= link_to "here", "#" %>
 
 
+11. Installing gems
+* open Gemfile
+* add 'gem [gemname]'
+* stop server and run bundle install
+* restart server
+* update files as per specific gem docs
+
+12. Page partials
+* views/layouts/application.html.erb is the main application file
+* make files like _nav.html.erb and save it into the layouts folder
+* then use <%= render 'layouts/nav' %> to render that partial
+
+13. Adding attributes to links like so
+	
+	<%= link_to "link text", "link location", class: "class-name-here" %>
+
+
+14. 
