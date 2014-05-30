@@ -19,7 +19,7 @@
         <td><%= image_tag link.image.url(:thumb) %></td>
         <td><%= link.title %></td>
         <td><%= link.url %></td>
-        <td><%= link.user.try(:email) %></td>
+        <td><%= link.user.try(:name) %></td>
         <td><%= link_to 'Show', link %></td>
         <% if link.user == current_user %>
           <td><%= link_to 'Edit', edit_link_path(link) %></td>
