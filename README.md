@@ -171,3 +171,7 @@ D. now in the console you can set the user_id of a Link like so (dont forget to 
 	link.destroy
 	Link.first.destroy
 * heroku by default doesnt store images (or will but they’ll be removed after a bit) [this article](https://devcenter.heroku.com/articles/paperclip-s3) covers handling imagery using Amazon S3. 
+* stick to the US Standard to prevent mad shit
+
+22. Queries
+* learn some [active record queries](http://guides.rubyonrails.org/active_record_querying.html)

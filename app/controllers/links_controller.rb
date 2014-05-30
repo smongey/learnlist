@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   
   def index
-    @links = Link.all
+    @links = Link.all.order("created_at DESC")
   end
 
   def show
