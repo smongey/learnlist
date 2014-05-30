@@ -1,6 +1,6 @@
 // Rails Instructions
 
-1. $ rails new [your app name]
+1. 'rails new [your app name]'
 
 2. cd into the project folder
 
@@ -170,3 +170,4 @@ D. now in the console you can set the user_id of a Link like so (dont forget to 
 	link = Link.first
 	link.destroy
 	Link.first.destroy
+* heroku by default doesnt store images (or will but they’ll be removed after a bit) [this article](https://devcenter.heroku.com/articles/paperclip-s3) covers handling imagery using Amazon S3. 
