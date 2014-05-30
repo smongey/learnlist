@@ -76,7 +76,7 @@
 
 16. Devise for user management
 * add the gem to the gemfile 'gem device', get the version from rubygems.org
-* the github page has full instructions but this is the next required command 'rails generate devise:install' which will giv you a list of things you need to do next
+* the [github page](https://github.com/plataformatec/devise) has full instructions but this is the next required command 'rails generate devise:install' which will giv you a list of things you need to do next
 * then generate devise views like so 'rails generate devise:views' which will spit out a folder inside views with all the files needed for users
 * you can write a flash block into the application file like so
 	<% flash.each do |name, msg| %>
@@ -149,7 +149,7 @@ D. now in the console you can set the user_id of a Link like so (dont forget to 
 	<%= link.user.try(:email) %>
 	<%= link.user.email if link.user %>
 
-21. Imagery
+21. Images
 * install [imagemagick](http://cactuslab.com/imagemagick/) on your machine
 * install the [paperclip gem](https://github.com/thoughtbot/paperclip) in the project
 * 'bundle install' and see the paperclip documentation for adding the following to the link model
