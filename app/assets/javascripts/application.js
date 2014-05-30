@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+	function randomSymbol(){
+		var symbols = ['✖', '☂', '', '✔', '✌', '✏', '☀', '☼', '◵', '❖', '◆', '⎔', '⊕', '⧫', '⧄', '✜'];
+		var randomNum = Math.floor(Math.random() * symbols.length);
+		return symbols[randomNum]
+	}
+	randomSymbol();
+	
+	// 
+	$('.home').empty().append(randomSymbol());
+
+
+});
+
