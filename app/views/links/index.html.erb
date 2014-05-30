@@ -1,37 +1,28 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Url</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @links.each do |link| %>
-      <tr>
-        <td><%= image_tag link.image.url(:thumb) %></td>
-        <td><%= link.title %></td>
-        <td><%= link.url %></td>
-        <td><%= link.user.try(:name) %></td>
-        <td><%= link_to 'Show', link %></td>
-        <% if link.user == current_user %>
-          <td><%= link_to 'Edit', edit_link_path(link) %></td>
-          <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= will_paginate @links %>
+<% @links.each do |link| %>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Link', new_link_path %>
+	<div class="link">
+	<% if link.url.include? '.jpg' or link.url.include? '.png' or link.url.include? '.gif' %>
+
+		<%= link_to(link) do %>
+			<img src="<%= link.url %>" width="300" alt="">
+		<% end %>
+		</a>
+		<p><%= link.title %></p>
+	<% else %>
+
+		<%= link_to image_tag(link.image.url(:medium)), link %>
+		<% if link.url %>
+			<p><a href="<%= link.url %>"><%= link.title %></a></p>
+		<% else %>
+			<p><%= link.title %></p>
+		<% end %>
+
+	<% end %>
+	</div>
+
 <% end %>
+
+<%= will_paginate @links %>

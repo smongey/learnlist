@@ -1,7 +1,23 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* { padding:5px 0px; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+body { padding:20px; font:bold .8em/1em Helvetica, Arial, sans-serif; }
+h1 { padding: 0px; }
+nav a { padding:0 3px; }
+.hidden { display: none; }
+a { text-decoration: none; color:#000; }
+a:hover { @include transition(all ease .2s); color:#666; }
+input { padding: 6px; }
+.link {
+	padding: 0;
+	text-align: center;
+	float: left;
+	margin: 10px;
+	p, img, a { display: block; padding: 0; }
 
-h1 {
-	// put yo shit here
+}
+
+.notes { 
+	p, a { display: inline-block; padding: 3px; }
 }

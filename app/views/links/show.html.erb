@@ -1,16 +1,31 @@
-<%= image_tag @link.image.url %>
+<div class="link">
+<% if @link.url.include? '.jpg' or @link.url.include? '.png' or @link.url.include? '.gif' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @link.title %>
-</p>
+	<%= link_to(@link) do %>
+		<img src="<%= @link.url %>" alt="">
+	<% end %>
+	</a>
+	<p><%= @link.title %></p>
+<% else %>
 
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
+	<%= link_to image_tag(@link.image.url), @link %>
+	<% if @link.url %>
+		<p><a href="<%= @link.url %>"><%= @link.title %></a></p>
+	<% else %>
+		<p><%= @link.title %></p>
+	<% end %>
 
-<% if @link.user == current_user %>
-	<%= link_to 'Edit', edit_link_path(@link) %>
 <% end %>
+
+<div class="notes">
+<p>Posted by <%= @link.user.try(:name) %></p>
+<% if @link.user == current_user %>
+  <%= link_to 'Edit', edit_link_path(@link) %>
+  <%= link_to 'Delete', @link, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</div>
 <%= link_to 'Back', links_path %>
+</div>
+
+
+
