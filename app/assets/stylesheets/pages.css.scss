@@ -27,6 +27,6 @@ input { padding: 6px; }
 }
 
 @media only screen and (min-device-width : 320px) {
-	body { padding: 5; }
-	* { max-width: 90%; }
+	body { padding: 5px; }
+	* { max-width: 100%; }
 }
