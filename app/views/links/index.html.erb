@@ -3,7 +3,7 @@
 
 <% @links.each do |link| %>
 
-	<div class="link">
+	<div class="box link">
 	<% if link.url.include? '.jpg' or link.url.include? '.png' or link.url.include? '.gif' %>
 
 		<%= link_to(link) do %>

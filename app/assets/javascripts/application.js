@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require masonry/jquery.masonry
 
 $(document).ready(function(){
 
@@ -28,5 +29,16 @@ $(document).ready(function(){
 	$('.home').empty().append(randomSymbol());
 
 
+
 });
 
+$(function(){
+
+  $('.container').masonry({
+    itemSelector: '.link',
+    columnWidth: 300,
+    gutterWidth: 50,
+    isAnimated: true
+  });
+
+});
