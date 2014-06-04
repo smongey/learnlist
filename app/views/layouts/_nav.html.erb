@@ -4,7 +4,7 @@
 <% if user_signed_in? %>
 	<!-- <%= link_to 'Links', links_path %> -->
 	<%= link_to 'New Link', new_link_path %>
-	<%= link_to "Profile", edit_user_registration_path, class: "profile" %>
+	<%= link_to "Account", edit_user_registration_path, class: "profile" %>
 	<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "logout"  %>
 <% else %>
 	<%= link_to "Log in", new_user_session_path, class: "login" %>
