@@ -22,7 +22,10 @@ function popState() {
 	$('.link a').on('click', function(e){
 		e.preventDefault();
 
-		$('body').css('overflow-y', 'hidden');
+		$('body').css({
+			'overflow-y': 'hidden',
+			'height': '100%'
+		});
 		var $link = $(this).attr('href');
 		var $segment = $link + ' #link'
 
@@ -31,7 +34,10 @@ function popState() {
 			$('#close, #ghost').on('click', function(){
 				$('#single').fadeOut(150).removeClass('active').empty();
 				$('#ghost').fadeOut(150);
-				$('body').css('overflow-y', 'scroll');
+				$('body').css({
+					'overflow-y': 'scroll',
+					'height': 'auto'
+				});
 			});
 
 		}).fadeIn(150).addClass('active');
