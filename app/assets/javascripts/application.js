@@ -23,7 +23,7 @@ function popState() {
 		e.preventDefault();
 
 		$('body').css({
-			'overflow-y': 'hidden',
+			'overflow': 'hidden',
 			'height': '100%'
 		});
 		var $link = $(this).attr('href');
