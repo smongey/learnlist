@@ -18,22 +18,24 @@
 
 
 function popState() {
-	$('#single').hide();	
+	$('#single, #ghost').hide();	
 	$('.link a').on('click', function(e){
 		e.preventDefault();
 
+		$('body').css('overflow-y', 'hidden');
 		var $link = $(this).attr('href');
 		var $segment = $link + ' #link'
 
 		$('#single').load( $segment, function() {
 			console.log($segment);
-			$('.box, nav').fadeTo(150, '.2');
-			$('#close').on('click', function(){
+			$('#close, #ghost').on('click', function(){
 				$('#single').fadeOut(150).removeClass('active');
-				$('.box, nav').fadeTo(150, '1');
+				$('#ghost').fadeOut(150);
+				$('body').css('overflow-y', 'scroll');
 			});
 
 		}).fadeIn(150).addClass('active');
+		$('#ghost').fadeIn(150);
 	});
 }
 
