@@ -8,7 +8,7 @@ h1 { padding: 0px; }
 nav a { padding:0 3px; }
 .hidden { display: none; }
 a { text-decoration: none; color:#000; }
-a:hover { @include transition(all ease .2s); color:#666; }
+
 input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; outline: none; border:none; background: #e6e6e6;
 	&:focus { background: #ffdddd; }
 }
@@ -18,7 +18,33 @@ input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; out
 	float: left;
 	margin: 10px;
 	min-width: 300px;
-	p, img, a { display: block; padding: 0; }
+	p, img, a { padding: 0; }
+	a.ext {
+		@include transition(all ease .2s);
+		width: inherit;
+		position: relative;
+		&::after {
+			content: '⌗';
+			font-size: 1em;
+			display:block; 
+			position: absolute;
+			top:100%;
+			right: 0;
+			width:10px;
+			height:10px;
+			margin-top: -17px;
+			margin-right: -14px;
+			color:lighten(black, 70%);
+			@include transition(all ease .1s);
+			
+		}
+		&:hover {
+			color:lighten(red, 20%);
+			&::after {
+				margin-right: -16px;	
+			}
+		}
+	}
 
 }
 
@@ -54,13 +80,14 @@ input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; out
 	#link {
 		display: block;
 		position: relative;
-		padding: 30px;
+		padding: 40px;
 		text-align: left;
 		img { max-width: 100%; border:none; }
 	}
 	&.active {
 		opacity: 1;
 	}
+
 }
 
 #ghost {

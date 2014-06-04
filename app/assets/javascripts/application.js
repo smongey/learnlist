@@ -19,7 +19,7 @@
 
 function popState() {
 	$('#single, #ghost').hide();	
-	$('.link a').on('click', function(e){
+	$('.link a.in').on('click', function(e){
 		e.preventDefault();
 
 		$('body').css({

@@ -1,11 +1,12 @@
-Links Project:
+
+Links Project TODOs:
  ☐ add categories field so user picks a category for each link
  ☐ add a posted on {date} for the modal page
  ☐ add lazyloading with pagination
  ☐ spinner/loader for when larger images are loading in
  ☐ highlight hyperlinks in some way on the modal page
  ☐ restyle/close button on modal page
- ☐ add class to the modal link on image so the text hyperlinks work on the overview page
+ ✔ add class to the modal link on image so the text hyperlinks work on the overview page @done (14-06-04 22:53)
  ☐ responsive css for modal open view
  ☐ add pushState on the modal open
  ☐ add pushState on load if the url goes directly to a link
