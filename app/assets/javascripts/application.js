@@ -16,6 +16,43 @@
 //= require_tree .
 //= require masonry/jquery.masonry
 
+
+function popState() {
+	$('#single').hide();	
+	$('.link a').on('click', function(e){
+		e.preventDefault();
+
+		var $link = $(this).attr('href');
+		var $segment = $link + ' #link'
+
+		$('#single').load( $segment, function() {
+			console.log($segment);
+			$('.box, nav').fadeTo(150, '.2');
+			$('#close').on('click', function(){
+				$('#single').fadeOut(150).removeClass('active');
+				$('.box, nav').fadeTo(150, '1');
+			});
+
+		}).fadeIn(150).addClass('active');
+	});
+}
+
+
+
+function reReady(){
+	var $container = $('.container');
+	// initialize
+	$container.masonry({
+		itemSelector: '.link',
+		columnWidth: 300,
+		gutterWidth: 50,
+		isAnimated: true
+	});
+	popState()
+}
+
+
+
 $(document).ready(function(){
 
 	function randomSymbol(){
@@ -29,17 +66,19 @@ $(document).ready(function(){
 	$('.home').empty().append(randomSymbol());
 	$('document.title').empty().append(randomSymbol());
 
+
+
+
 });
 
 $(window).load( function(){
-
-	var $container = $('.container');
-	// initialize
-	$container.masonry({
-		itemSelector: '.link',
-		columnWidth: 300,
-		gutterWidth: 50,
-		isAnimated: true
-	});	
-
+	reReady()
 });
+
+$(document).on('page:load', function(){
+	reReady()
+});
+
+
+
+

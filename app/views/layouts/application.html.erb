@@ -11,7 +11,7 @@
 
 
 	<%= render "layouts/nav" %>
-	<div class="container">
+	<div id="content" class="container" data-no-turbolink>
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 		<% end %>

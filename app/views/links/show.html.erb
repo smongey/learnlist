@@ -1,4 +1,4 @@
-<div class="link">
+<div id="link" class="link">
 <% if @link.url.include? '.jpg' or @link.url.include? '.png' or @link.url.include? '.gif' %>
 
 	<%= link_to(@link) do %>
@@ -17,14 +17,15 @@
 
 <% end %>
 
-<div class="notes">
-<p>Posted by <%= @link.user.try(:name) %></p>
-<% if @link.user == current_user %>
-  <%= link_to 'Edit', edit_link_path(@link) %>
-  <%= link_to 'Delete', @link, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-</div>
-<%= link_to 'Back', links_path %>
+	<div class="notes">
+	<p>Posted by <%= @link.user.try(:name) %></p>
+	<% if @link.user == current_user %>
+	  <%= link_to 'Edit', edit_link_path(@link) %>
+	  <%= link_to 'Delete', @link, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+	</div>
+	<!-- <%= link_to 'Back', links_path %> -->
+	<a id="close" href="#">X</a>
 </div>
 
 
