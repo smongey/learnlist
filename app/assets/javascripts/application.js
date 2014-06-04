@@ -29,7 +29,7 @@ function popState() {
 		$('#single').load( $segment, function() {
 			console.log($segment);
 			$('#close, #ghost').on('click', function(){
-				$('#single').fadeOut(150).removeClass('active');
+				$('#single').fadeOut(150).removeClass('active').empty();
 				$('#ghost').fadeOut(150);
 				$('body').css('overflow-y', 'scroll');
 			});
