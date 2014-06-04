@@ -27,6 +27,7 @@ $(document).ready(function(){
 	
 	// 
 	$('.home').empty().append(randomSymbol());
+	$('document.title').empty().append(randomSymbol());
 
 	$('.container').masonry({
 		itemSelector: '.link',
