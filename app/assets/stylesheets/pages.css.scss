@@ -27,7 +27,12 @@ input { padding: 6px; }
 	font-size: 1.7em; vertical-align: top; padding: 5px 10px 0 0;
 }
 
+.alert {
+	position: fixed;
+	top:20px;
+	right:20px;
+}
+
 @media only screen and (min-device-width : 320px) {
 	body { padding: 5px; }
-	* { max-width: 100%; }
 }

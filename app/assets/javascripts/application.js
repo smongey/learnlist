@@ -29,12 +29,17 @@ $(document).ready(function(){
 	$('.home').empty().append(randomSymbol());
 	$('document.title').empty().append(randomSymbol());
 
-	$('.container').masonry({
+});
+
+$(window).load( function(){
+
+	var $container = $('.container');
+	// initialize
+	$container.masonry({
 		itemSelector: '.link',
 		columnWidth: 300,
 		gutterWidth: 50,
 		isAnimated: true
-	});
-
+	});	
 
 });
