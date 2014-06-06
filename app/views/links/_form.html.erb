@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :title, placeholder: 'Link Title'  %>
+    <%= f.text_field :title, placeholder: 'Link Title', :required => true  %>
   </div>
   <div class="field">
-    <%= f.label :image %> (optional)<br>
+    <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.text_field :url, placeholder: 'Link or Image url' %>
+    <%= f.text_field :url, placeholder: 'Link or Image url', :required => true %>
   </div>
   <div class="actions">
     <%= f.submit value: 'Add Link'  %>
