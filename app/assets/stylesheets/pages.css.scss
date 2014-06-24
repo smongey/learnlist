@@ -1,9 +1,9 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-* { padding:5px 0px; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-body { padding:20px; font:400 .95em/1em 'Alegreya', serif; }
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+* { padding:5px 0px; -webkit-font-smoothing: antialiased; }
+body { padding:30px 20px; font:400 .95em/1em 'Alegreya', serif; }
 h1 { padding: 0px; }
 nav a { padding:0 3px; }
 .hidden { display: none; }
@@ -12,12 +12,19 @@ a { text-decoration: none; color:#000; }
 input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; outline: none; border:none; background: #e6e6e6;
 	&:focus { background: #ffdddd; }
 }
+
 .link {
-	padding: 0;
-	text-align: center;
-	float: left;
-	margin: 10px;
+
 	min-width: 300px;
+    width: 29%;
+    margin: 0 2% 50px;
+    float: left;
+	text-align: center;
+
+	img {
+		width: 100%;
+	}
+
 	p, img, a { padding: 0; }
 	a.ext {
 		@include transition(all ease .2s);
@@ -49,7 +56,7 @@ input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; out
 }
 
 .notes { 
-	p, a { display: inline-block; padding: 3px; }
+	p, a { display: inline-block; padding: 3px 3px 3px 0px; }
 }
 
 .home { 
@@ -73,6 +80,7 @@ input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; out
 	right:0;
 	top:0;
 	z-index:9999;
+	display: none;
 	& > * {
 		max-width: 100%;
 	}
@@ -101,6 +109,7 @@ input { padding: 10px; width: 250px; font:400 1.2em/1.2em 'Alegreya', serif; out
 	z-index: 9999;
 	min-height: 100%;
 	width:50%;
+	display: none;
 }
 #ghost:hover {
 	cursor: w-resize;

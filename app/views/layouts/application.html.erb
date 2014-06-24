@@ -12,12 +12,16 @@
 
 
 	<%= render "layouts/nav" %>
+
 	<div id="content" class="container" data-no-turbolink>
+
+		
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 		<% end %>
 		
 		<%= yield %>
+	
 	</div>
 
 </body>
