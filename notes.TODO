@@ -18,6 +18,6 @@ Links Project TODOs:
  ✔ fix url input so just text wont link @done (14-06-05 10:03)
  ☐ make masonry fluid so it resizes to always show 3 or 4 columns which fill the browser window
  ☐ do a window push to reveal the content in the modal like a menu rather than fade in and out on top
-
+ ☐ favicon
 
 
