@@ -16,10 +16,10 @@
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, :required => true %>
   </div>
   <div class="field">
-    <%= f.text_field :url, placeholder: 'Link or Image url', :required => true %>
+    <%= f.text_field :url, placeholder: 'Website Link', :required => true %>
   </div>
   <div class="actions">
     <%= f.submit value: 'Add Link'  %>
