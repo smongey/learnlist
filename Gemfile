@@ -13,6 +13,7 @@ gem 'paperclip', '~> 4.1'
 gem 'aws-sdk', '~> 1.5.7'
 gem 'will_paginate', '~> 3.0.5'
 gem 'masonry-rails'
+gem 'dynopoker'
 
 group :development, :test do
 	gem 'sqlite3'
